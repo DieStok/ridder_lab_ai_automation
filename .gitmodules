@@ -1,0 +1,28 @@
+# Submodule registry for lab_ai_automation.
+#
+# This file is populated by `git submodule add` during the monorepo
+# initialization phase (handled by the /ce:plan execution following the
+# brainstorm at docs/brainstorms/2026-04-26-lab-ai-monorepo-scaffold-brainstorm.md).
+#
+# Expected entries after /ce:plan completes:
+#   slack_paperbot_ridder_lab    https://github.com/DieStok/slack_paperbot_ridder_lab.git
+#   deep_research_bot            https://github.com/DieStok/ridder_lab_deep_research.git
+#   summarize_bot                https://github.com/DieStok/ridder_lab_summarization_bot.git
+#   coding_agent_installer       https://github.com/DieStok/coding_agent_installer_ridder_lab.git
+#   automation_building_blocks   https://github.com/DieStok/ridder_lab_LLM_automation_building_blocks.git
+#   hackathon                    https://github.com/DieStok/ridder_lab_retreat_ai_hackathon_2026.git
+[submodule "deep_research_bot"]
+	path = deep_research_bot
+	url = https://github.com/DieStok/ridder_lab_deep_research.git
+[submodule "summarize_bot"]
+	path = summarize_bot
+	url = https://github.com/DieStok/ridder_lab_summarization_bot.git
+[submodule "automation_building_blocks"]
+	path = automation_building_blocks
+	url = https://github.com/DieStok/ridder_lab_LLM_automation_building_blocks.git
+[submodule "hackathon"]
+	path = hackathon
+	url = https://github.com/DieStok/ridder_lab_retreat_ai_hackathon_2026.git
+[submodule "coding_agent_installer"]
+	path = coding_agent_installer
+	url = https://github.com/DieStok/coding_agent_installer_ridder_lab.git

@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment files (secrets)
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs and runtime state
+logs/
+*.log
+data/
+
+# Test artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# AI / LLM detritus
+*.sqlite
+*.duckdb
+.chroma/
+.langgraph_checkpoints/
+models/
+*.gguf
+*.onnx
+
+# Node (in case any tool ships JS)
+node_modules/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# uv
+.python-version
