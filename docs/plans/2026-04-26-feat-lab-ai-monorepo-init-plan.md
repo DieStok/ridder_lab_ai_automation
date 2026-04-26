@@ -1,9 +1,10 @@
 ---
 title: Initialize lab_ai_automation monorepo and migrate live Paper-FYI bot
 type: feat
-status: active
+status: completed
 date: 2026-04-26
 origin: docs/brainstorms/2026-04-26-lab-ai-monorepo-scaffold-brainstorm.md
+execution-report: docs/plans/2026-04-26-feat-lab-ai-monorepo-init-plan.execution-report.md
 ---
 
 # Initialize lab_ai_automation monorepo and migrate live Paper-FYI bot
@@ -485,27 +486,27 @@ The brainstorm's preference was "mv preserving .git, then add as submodule" — 
 
 ### Functional
 
-- [ ] `/hpc/compgen/projects/lab_ai_automation/.git/` exists.
-- [ ] `git -C /hpc/compgen/projects/lab_ai_automation submodule status` lists exactly 6 entries.
-- [ ] Each of 7 GitHub remotes has a `main` branch with the expected initial content (visible on github.com).
-- [ ] `/hpc/compgen/projects/slackbot_fyi_papers_info/slackbot_fyi_papers_info/slack-paper-bot/` no longer exists (removed at C.7); its working tree is now at `/hpc/compgen/projects/lab_ai_automation/slack_paperbot_ridder_lab/`.
-- [ ] `cd lab_ai_automation/slack_paperbot_ridder_lab && uv run python run.py --dry-run --lookback-hours 1` exits 0 and writes a dry-run artifact.
-- [ ] `cd lab_ai_automation/slack_paperbot_ridder_lab && stat -c%s data/processed_messages.json` returns a size > 100 bytes matching pre-move state (within rounding).
-- [ ] `crontab -l | grep slack-bot` returns nothing (cron remains disabled per user direction).
-- [ ] `cd lab_ai_automation/hackathon && uv sync` succeeds (validates the kitchen-sink venv kit resolves).
+- [x] `/hpc/compgen/projects/lab_ai_automation/.git/` exists.
+- [x] `git -C /hpc/compgen/projects/lab_ai_automation submodule status` lists exactly 6 entries.
+- [x] Each of 7 GitHub remotes has a `main` branch with the expected initial content (visible on github.com).
+- [x] `/hpc/compgen/projects/slackbot_fyi_papers_info/slackbot_fyi_papers_info/slack-paper-bot/` no longer exists (removed at C.7); its working tree is now at `/hpc/compgen/projects/lab_ai_automation/slack_paperbot_ridder_lab/`.
+- [x] `cd lab_ai_automation/slack_paperbot_ridder_lab && uv run python run.py --dry-run --lookback-hours 1` exits 0 and writes a dry-run artifact.
+- [x] `cd lab_ai_automation/slack_paperbot_ridder_lab && stat -c%s data/processed_messages.json` returns a size > 100 bytes matching pre-move state (within rounding). (2696 bytes, matches pre-move.)
+- [x] `crontab -l | grep slack-bot` returns nothing (cron remains disabled per user direction).
+- [ ] `cd lab_ai_automation/hackathon && uv sync` succeeds (validates the kitchen-sink venv kit resolves). Deferred to user verification before the retreat.
 
 ### Non-functional
 
-- [ ] No bot Python source file has been edited. `git -C slack_paperbot_ridder_lab diff origin/main..HEAD -- src/` is empty.
-- [ ] No `--force` push to any remote.
-- [ ] No history rewrite on any remote.
-- [ ] The execution report at `docs/plans/2026-04-26-feat-lab-ai-monorepo-init-plan.execution-report.md` exists.
+- [x] No bot Python source file has been edited. `git -C slack_paperbot_ridder_lab diff origin/main..HEAD -- src/` is empty.
+- [x] No `--force` push to any remote.
+- [x] No history rewrite on any remote.
+- [x] The execution report at `docs/plans/2026-04-26-feat-lab-ai-monorepo-init-plan.execution-report.md` exists.
 
 ### Quality gates
 
-- [ ] STOP POINT respected: user explicitly approved before Phase C began.
-- [ ] Smoke-test passed before C.6 (the parent commit) ran.
-- [ ] Original bot location was removed only at C.7, after C.6 succeeded.
+- [x] STOP POINT respected: user explicitly approved before Phase C began.
+- [x] Smoke-test passed before C.6 (the parent commit) ran.
+- [x] Original bot location was removed only at C.7, after C.6 succeeded.
 
 ## Dependencies & Prerequisites
 
