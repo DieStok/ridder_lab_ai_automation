@@ -26,3 +26,6 @@
 [submodule "coding_agent_installer"]
 	path = coding_agent_installer
 	url = https://github.com/DieStok/coding_agent_installer_ridder_lab.git
+[submodule "slack_paperbot_ridder_lab"]
+	path = slack_paperbot_ridder_lab
+	url = https://github.com/DieStok/slack_paperbot_ridder_lab.git
