@@ -35,3 +35,7 @@
 	path = slack_paperbot_ridder_lab
 	url = https://github.com/DieStok/slack_paperbot_ridder_lab.git
 	branch = main
+[submodule "roboroy"]
+	path = roboroy
+	url = https://github.com/DieStok/roboroy.git
+	branch = main
