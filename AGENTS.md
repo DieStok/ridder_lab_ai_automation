@@ -23,7 +23,7 @@ This repo runs in three places: laptops (developers), HPC cluster (batch compute
 
 If you need to do something platform-specific (submit an `sbatch` job, add a systemd unit, write a Dockerfile), put it in a deployment recipe under `automation_building_blocks/deployment_recipes/`. The tool's source code stays platform-agnostic.
 
-**HPC policy worth knowing:** the cluster maintainer is uncomfortable with long-lived internet-facing processes on submit nodes. Slack listeners and external-API pollers should not be assumed to run on HPC. HPC is one possible deployment target, not the default.
+**HPC policy worth knowing:** the cluster **does** have outbound internet — a compute node can reach external APIs (Slack, NCBI, etc.) for the time a job needs. The constraint is about *shape*, not connectivity: **short-lived `sbatch` jobs that call an external API and exit are fine**; what the maintainer doesn't want is **long-lived, internet-facing _listeners_** (Socket-Mode bots, pollers) sitting on submit nodes. So a weekly job that collects data, runs an LLM on a GPU, posts/queues to Slack, and exits is a perfectly good HPC deployment — and for batch tools like these, HPC is often the primary target, not a fallback. Run the heavy/networked work through `sbatch`, not inline on a submit node.
 
 ## Environment expectations
 
